@@ -1,0 +1,51 @@
+{% extends 'zdravstveni_sustav_app/base.html' %}
+{% load static %}
+
+{% block content%}
+
+    <div class="container custom-container mb-5">
+        <div class="row pt-4 mb-5">
+            <div class="col-md-12">
+                <h1>Upoznajte naše doktore!</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="custom-list lista-doktori-velicina-fonta">
+                    <li class="pb-2">Svi naši doktori su profesionalci s dugogodišnjim iskustvom</li>
+                    <li class="pb-2">Naručite se jednim klikom! Ili ih kontaktirajte na e-mail</li>
+                    <li class="pb-2">Profesionalno i certificirano osoblje!</li>
+                    <li class="pb-2">Naruči se kod koga želiš!</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row padding">
+            {% for doktor in doktori %}
+                {% comment %}
+                Provjeravamo forloop.counter da mora biti 2 ili veći
+                zato jer inače ispisuje admina
+                {% endcomment %}
+                {% if forloop.counter >= 2 %}
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <div class="card mb-5">
+                            <div class="image-container">
+                                <img src="{{ doktor.profil.image.url }}" class="card-img-top doktor-img" alt="{{ doktor.first_name }}">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ doktor.first_name }} {{ doktor.last_name }} - {{ doktor.specijalizacija_doktora }}</h5>
+                                <p class="card-text">{{ doktor.opis_doktora}} {{ doktor.iskustvo_doktora }}</p>
+                                <p class="card-text">Trenutna lokacija doktora: {{ doktor.dom_zdravlja }}</p>
+                                <p class="card-text">Medicinske sestre doktora:</p>
+                                <ul class="card-text">
+                                {% for sestra in doktor.medicinskasestra_set.all %}
+                                    <li>{{ sestra.ime_sestre }} {{ sestra.prezime_sestre}}</li>
+                                {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

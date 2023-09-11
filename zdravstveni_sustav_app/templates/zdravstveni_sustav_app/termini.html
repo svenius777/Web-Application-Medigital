@@ -1,0 +1,44 @@
+{% extends "zdravstveni_sustav_app/base.html" %}
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.9.0/main.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.9.0/main.min.css" rel="stylesheet">
+</head>    
+<!--ucitava css is static-a-->
+{% load static %}
+<!-- card selektor u main.scss-u smo editali da bude manji width
+mx-auto namjesta card da bude u sredini-->
+{% block content %}
+<div class="container custom-container paragraf-termini">
+    <div class="row mt-5 padding">
+        <div class="col-md-6 col-sm-12 text-center pl-5">
+            <h1 class="text-left pb-3">Pozdrav {{ doktor.first_name }}!</h1>
+            <img class="d-flex pb-5 pl-3 ml-2" src="{% static 'zdravstveni_sustav_app/images/wave.png'  %}" style="width: 100px; height:auto;">
+            <p class="text-left pt-2">Ovdje su izlistani termini i svi podaci o terminima tvojih pacijenata i narudžbi. 
+                Također možeš pregledati njihove simptome.</p>
+        </div>
+
+        <div class="col-md-6 col-sm-12 text-center termini-slika">
+            <img src={{ doktor.profil.image.url }} class="slika_doktora rounded img-thumbnail">
+        </div>
+    </div>
+</div>
+
+<div class="container paragraf-termini">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 d-flex justify-content-center">
+            <ul class="custom-list">
+                {% for narudzba in narudzba_set %}
+                    <li>
+                        <p>Pacijent {{ narudzba.ime_pacijenta }} {{ narudzba.prezime_pacijenta }} 
+                            naručio se na pregled kod vas datuma {{ narudzba.datum_pregleda|date:"d. m. Y." }} 
+                            u sljedeće vrijeme: {{ narudzba.vrijeme_pregleda }}</p>
+                        <p>{{ narudzba.ime_pacijenta }} je naveo sljedeće simptome: {{ narudzba.simptomi }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock content %}

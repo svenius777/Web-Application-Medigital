@@ -1,0 +1,34 @@
+{% extends 'zdravstveni_sustav_app/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container custom-container mb-5">
+    <div class="row pt-4 mb-5">
+        <div class="col-md-12">
+            <h1>Naše lokacije su rasprostranjene diljem PGŽ!</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="custom-list lista-doktori-velicina-fonta">
+                <li class="pb-2">Gdje god vam zatrebamo, mi smo tu!</li>
+                <li class="pb-2">Nalazimo se na čak više od 5 lokacija!</li>
+                <li class="pb-2">Profesionalno i certificirano osoblje!</li>
+                <li class="pb-2">Naručite se jednim klikom! Ili ih kontaktirajte na e-mail!</li>
+                <li class="pb-2">Naši domovi zdravlja su digitalizirani i modernizirani</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row padding">
+        {% for dom in lokacije %}
+            <div class="card col-md-6 col-sm-12 mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">{{dom.naziv_doma_zdravlja}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted pb-5">{{dom.adresa_doma_zdravlja}}</h6>
+                    <p class="card-text">{{dom.opis_doma_zdravlja}}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

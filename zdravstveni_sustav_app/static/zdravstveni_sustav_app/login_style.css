@@ -1,0 +1,64 @@
+/* styles.css */
+.login-container {
+    background-color: #004aad;
+    padding: 40px;
+    color: white;
+    border-radius: 10%;
+    margin: auto;
+    margin-bottom: 20px;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center; 
+  }
+
+.login-form-padding{
+  padding-right: 110px;
+}
+
+.login-container a{
+  color: white;
+}
+
+.logout-container {
+  background-color: #004aad;
+  padding: 40px;
+  color: white;
+  border-radius: 10%;
+  margin: auto;
+  margin-bottom: 20px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+  
+.form-group {
+  margin-bottom: 15px;
+
+}
+  
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+
+img.avatar{
+  width: 40%;
+  border-radius: 50%;
+}
+
+.btn {
+  background-color: white;
+  color: black;
+  width: 50%;
+  margin: auto;
+}
+
+.login-obrazac td{
+  padding: 10px;
+  color: white;
+}

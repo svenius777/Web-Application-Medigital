@@ -1,0 +1,19 @@
+
+
+.slika {
+    height: 500px;
+    width: auto;
+}
+
+.display-inline{
+    display: inline-block;
+}
+
+.naruci-se-gumb-form{
+    font-size: 30px;
+    background-color:#004AAD;
+}
+
+.form-padding {
+    padding-right: 200px;
+}

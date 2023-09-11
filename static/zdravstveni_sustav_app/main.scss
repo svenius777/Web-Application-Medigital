@@ -1,0 +1,383 @@
+body {
+    font-family: "Josefin Sans", sans-serif;
+  }
+  
+  .navbar {
+    background-color: #004aad;
+    margin: 0;
+  }
+  
+  .footer{
+    background-color: #004aad;
+  }
+  
+  .navbar .nav-link {
+    color: white !important;
+    font-weight: bold !important;
+    font-size: 32px;
+  }
+
+  .card-title {
+    font-size: 45px;
+  }
+  .card-text {
+    font-size: 25px;
+  }
+  .car {
+    background-color: #004AAD;
+    font-size: 27px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  hr {
+    border: 5px solid #ffffff;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  
+  .medigital-heading {
+    color: #004aad;
+    font-weight: bold;
+  }
+  
+  .bg-image{
+    background-image: url(images/doc_poc.png);
+    background-size: 100px 100px;
+  
+  }
+  
+  .list-group{
+    width: 30%;
+  }
+  
+  .list-group-item{
+    background-color: transparent;
+    font-size: 24px;
+    border-color: rgb(255, 255, 255);
+  
+  }
+  
+  .footer {
+    padding-top: 10px;
+    padding-bottom: 30px;
+  }
+  
+  .footer p{
+    color: white;
+    font-size: 24px;
+  }
+  
+  .social-icon{
+    width: 60px;
+    height: auto;
+  }
+  
+  .slika_doktora{
+    width: 300px;
+    height: auto;
+  }
+  
+  .paragraf-termini{
+    p{
+      font-size: 24px !important;
+    }
+  }
+  
+  .custom-list{
+    list-style-type: none;
+    list-style-image: url('images/heart-pulse-solid.svg');
+  }
+  
+  .list-group{
+    list-style-image: url('images/heart-pulse-solid.svg');
+  }
+  
+  .image-container {
+    width: 100%; /* Adjust this to your desired width */
+    height: 500px; /* Adjust this to your desired height */
+    overflow: hidden;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This property maintains aspect ratio and covers the container */
+  }
+  
+  .termini-slika {
+    width: 100%;
+    height: 400px;
+  }
+  
+  .termini-slika img{
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .lista-doktori-velicina-fonta{
+    font-size: 24px;
+  }
+  
+  .custom-container {
+    max-width: 1600px;
+  }
+  
+  .naruci-se-gumb{
+    margin-left: 60px;
+    margin-top: 50px;
+    font-size: 30px;
+    background-color:#004AAD;
+  }
+  
+  .naruci-se-gumb-about {
+    background-color:#004AAD;
+    font-size: 23px;
+  }
+  
+
+  .card-img-overlay{
+    margin-left: 90px;
+  }
+
+  .card-img{
+    height: 500px;
+    object-fit:cover;
+  }
+  
+
+  .card-deck-container {
+    margin-top: 60px;
+    background-color: #004AAD;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  
+  .card-white{
+    background-color: #ffffff;
+  }
+  /*# sourceMappingURL=main.css.map */
+  .padding {
+    margin-top: 40px;
+    margin-bottom: 30px;
+  }
+  
+  .card-doctor {
+    height: 60px;
+    width: auto;
+  }
+  
+  .logo {
+    width:100px;
+    height:auto;
+  }
+  
+  .navbar-toggler{
+    outline: none !important;
+  }
+
+  .prijava-float-left-hamburger{
+    float:left;
+  }
+  
+  @media (max-width: 992px) {
+
+    h1{
+      font-size: 28px;
+      text-align: center;
+    }
+
+    .card-title{
+      font-size: 28px !important;
+    }
+
+    .card-text{
+      font-size: 20px !important;
+    }
+
+    li{
+      font-size: 21px;
+    }
+
+    .footer{
+      p{
+        font-size: 28px;
+      }
+    }
+
+    .social-icon {
+      width: 60px;
+      height: auto;
+    }
+
+    .footer-sadrzaj {
+      padding-top: 60px;
+    }
+
+    .navbar{
+      .nav-link{
+          font-size: 29px;
+      }
+    }
+
+    .pocetna-container{
+      .card-img-overlay{
+          margin: 0;
+          margin-right: 30px;
+          
+          h5{
+              font-size: 32px;
+              text-align: center;
+          }
+          h4{
+              font-size: 30px;
+              margin-right: 90px;
+          }
+          ul{
+              font-size: 22px;
+          }
+      }
+    }
+
+  }
+  
+  @media (max-width: 768px) {
+    .footer{
+      p{
+        font-size: 25px;
+      }
+    }
+
+    .social-icon {
+      width: 60px;
+      height: auto;
+    }
+
+    .footer-sadrzaj {
+      padding-top: 60px;
+    }
+
+    .navbar{
+      .nav-link{
+          font-size: 27px;
+      }
+    }
+
+    .logo {
+      width: 80px;
+      height: auto;
+    }
+
+    .pocetna-container{
+      .card-img-overlay{
+          margin: 0;
+          margin-right: 30px;
+          
+          h5{
+              font-size: 32px;
+              text-align: center;
+          }
+          h4{
+              font-size: 30px;
+              margin-right: 90px;
+          }
+          ul{
+              font-size: 22px;
+          }
+      }
+    }
+
+    .naruci-se-gumb{
+      font-size: 150%;
+    }
+
+    h1{
+      font-size: 34px;
+      text-align: center;
+    }
+  
+  }
+  
+  @media (max-width: 576px) {
+    .paragraf-termini{
+      p{
+        font-size: 22px !important;
+      }
+    }
+
+    .footer{
+      p{
+        font-size: 20px;
+      }
+    }
+
+    h1{
+      font-size: 28px;
+      text-align: center;
+    }
+
+    .card-title{
+      font-size: 28px !important;
+    }
+
+    .card-text{
+      font-size: 20px !important;
+    }
+
+    li{
+      font-size: 21px;
+    }
+    .medigital-heading{
+      font-size: 30px;
+    }
+    .fa-solid{
+      font-size: 25px !important;
+      margin-top: 0px;
+    }
+
+    .logo {
+      width: 70px;
+      height: auto;
+    }
+
+    .social-icon {
+      width: 50px;
+      height: auto;
+    }
+
+    .footer-sadrzaj {
+      padding-top: 60px;
+    }
+
+    .naruci-se-gumb{
+      font-size: 120%;
+    }
+
+    .navbar{
+      .nav-link{
+          font-size: 25px;
+      }
+    }
+
+    .pocetna-container{
+      .card-img-overlay{
+          margin: 0;
+          margin-right: 30px;
+          
+          h5{
+              font-size: 30px;
+              text-align: center;
+          }
+          h4{
+              font-size: 28px;
+              margin-right: 90px;
+          }
+          ul{
+              font-size: 22px;
+          }
+      }
+    }
+
+
+  }

@@ -1,4 +1,3 @@
-from schedule.models import Calendar, Event
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse, HttpResponseNotFound
 from django.views import View

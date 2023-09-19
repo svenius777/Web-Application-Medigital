@@ -4,6 +4,7 @@
 
 <head>
   <link rel="stylesheet" type="text/css" href="{% static 'zdravstveni_sustav_app/narudzba_style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'zdravstveni_sustav_app/main.css' %}">
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -47,6 +48,7 @@
           <form action="{% url 'narudzba' %}" method="post" id="appointmentForm">
             {% csrf_token %}
 
+              
               <label for="ime_pacijenta">Ime:</label>
               <input class="form-control display-inline" placeholder="Ime pacijenta" type="text" name="ime_pacijenta">  
 
@@ -83,14 +85,11 @@
 
               <input value="Naruči se" type="submit" class="btn btn-primary naruci-se-gumb-form">
 
-              <div id="successMessage" style="display: none;">
-                <p>Form submitted successfully! Thank you.</p>
-              </div>
           </form>
         </div>
           
         <div class="col-md-6 rounded mt-3 col-sm-12">
-            <img src="{% static 'zdravstveni_sustav_app/images/nar.jpg' %}" alt="" class="slika rounded">
+            <img src="{% static 'zdravstveni_sustav_app/images/nar.jpg' %}" alt="" class="slika-naruci rounded">
         </div>
 
       </div>

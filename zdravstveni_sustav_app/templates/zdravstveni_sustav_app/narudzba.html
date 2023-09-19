@@ -4,14 +4,47 @@
 
 <head>
   <link rel="stylesheet" type="text/css" href="{% static 'zdravstveni_sustav_app/narudzba_style.css' %}">
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const appointmentDateInput = document.getElementById('appointmentDate');
+      const appointmentForm = document.getElementById('appointmentForm');
+      
+      // Get the current date in the format "YYYY-MM-DD"
+      const currentDate = new Date().toISOString().split('T')[0];
+  
+      // Set the min attribute of the date input to the current date
+      appointmentDateInput.min = currentDate;
+  
+      // Add a submit event listener to the form for additional validation
+      appointmentForm.addEventListener('submit', function (event) {
+        const selectedDate = appointmentDateInput.value;
+  
+        if (selectedDate < currentDate) {
+          event.preventDefault(); // Prevent form submission if the date is in the past
+          alert('Datum pregleda ne smije biti u prošlosti!');
+        }
+      });
+    });
+
+
+  </script>
 </head>
 <!--Main Content Start-->
   
 
     <div class="container-fluid d-flex justify-content-center mt-5 mb-5">
       <div class="row">
-        <div class="col-md-6 form-padding">
-          <form action="{% url 'narudzba' %}" method="post">
+        <div class="col-md-6 form-padding col-sm-12">
+          {% for msg in messages %}
+            
+              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>{{ msg }}</strong>
+              </div>
+              
+          {% endfor  %}
+
+          <form action="{% url 'narudzba' %}" method="post" id="appointmentForm">
             {% csrf_token %}
 
               <label for="ime_pacijenta">Ime:</label>
@@ -21,7 +54,7 @@
               <input class="form-control display-inline" type="text" name="prezime_pacijenta" placeholder="Prezime pacijenta">
 
               <label class="mt-3" for="telefon_pacijenta">Broj mobitela:</label>
-              <input class="form-control" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="091-134-4111" type="tel" name="telefon_pacijenta">
+              <input class="form-control" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3,4}" placeholder="091-134-411(1)" type="tel" name="telefon_pacijenta">
 
               <label class="mt-3" for="email_pacijenta">Vaš email:</label>
               <input class="form-control" placeholder="Email" type="email" name="email_pacijenta">
@@ -35,7 +68,7 @@
               </select>
 
               <label class="mt-3" for="datum_pregleda">Datum pregleda:</label>
-              <input name="datum_pregleda" class="form-control" type="date">
+              <input name="datum_pregleda" class="form-control" type="date" id="appointmentDate">
 
               <label class="mt-3" for="vrijeme_pregleda">Vrijeme pregleda:</label>
               <select class="form-control" name="vrijeme_pregleda">
@@ -50,15 +83,21 @@
 
               <input value="Naruči se" type="submit" class="btn btn-primary naruci-se-gumb-form">
 
+              <div id="successMessage" style="display: none;">
+                <p>Form submitted successfully! Thank you.</p>
+              </div>
           </form>
         </div>
           
-        <div class="col-md-6 rounded mt-3">
+        <div class="col-md-6 rounded mt-3 col-sm-12">
             <img src="{% static 'zdravstveni_sustav_app/images/nar.jpg' %}" alt="" class="slika rounded">
         </div>
 
       </div>
     </div>
+
+
+    
 
 <!--Main Content End-->
 {% endblock content %}

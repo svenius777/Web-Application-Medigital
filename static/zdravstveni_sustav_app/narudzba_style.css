@@ -1,7 +1,7 @@
 
 
 .slika {
-    height: 500px;
+    height: 800px;
     width: auto;
 }
 
@@ -16,4 +16,12 @@
 
 .form-padding {
     padding-right: 200px;
+}
+
+@media (max-width: 576px) {
+    .slika{
+        height: 100px !important;
+        width: auto !important;
+    }
+
 }

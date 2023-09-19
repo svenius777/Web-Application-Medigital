@@ -126,4 +126,6 @@ class NarudzbaView(View):
                 )
             
             messages.success(request,'Uspješna prijava narudžbe!')
+        else:
+            messages.error(request, 'Nešto ste krivo unijeli!')
         return redirect('narudzba')

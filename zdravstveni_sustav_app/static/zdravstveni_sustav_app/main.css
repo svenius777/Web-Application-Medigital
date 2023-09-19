@@ -2,6 +2,25 @@ body {
   font-family: "Josefin Sans", sans-serif;
 }
 
+.slika-naruci {
+  height: 500px;
+  width: 100;
+}
+
+.display-inline{
+  display: inline-block;
+}
+
+.naruci-se-gumb-form{
+  font-size: 30px;
+  background-color:#004AAD;
+}
+
+.form-padding {
+  padding-right: 200px;
+}
+
+
 .navbar {
   background-color: #004aad;
   margin: 0;

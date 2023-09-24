@@ -4,93 +4,75 @@
 {% load static %}
 <!-- card selektor u main.scss-u smo editali da bude manji width
 mx-auto namjesta card da bude u sredini-->
+
 {% block content %}
-<div class="d-flex justify-content-center pt-2 mt-2 mb-4">
-    <h1 class="pt-1 pr-2 medigital-heading">Medigital</h1>
-    <i class="fa-solid fa-heart-pulse fa-beat fa-2xl pt-4 pl-3" style="color: #c61414;"></i>
-</div>
+<body>
+  <div class="d-flex justify-content-center pt-2 mt-2 mb-4">
+      <h1 class="pt-1 pr-2 medigital-heading">Medigital</h1>
+      <i class="fa-solid fa-heart-pulse fa-beat fa-2xl pt-4 pl-3" style="color: #c61414;"></i>
+  </div>
 
-<div class="card bg-dark text-white pocetna-container">
-    <img class="card-img" src="{% static 'zdravstveni_sustav_app/images/doc_poc.png' %}" alt="Card image">
-    <div class="card-img-overlay justify-content-left">
-      <h5 class="card-title">-- Vaše zdravlje nam je bitno! --</h5>
-      <div class="pt-4 pl-5">
-        <h4 class="card-title">Mi vam nudimo:</h4>
-        <ul class="card-text">
-            <li>vrhunsku skrb na više od 5 lokacija</li>
-            <li>profesionalno i odgovorno medicinsko osoblje</li>
-            <li>mogućnost narudžbe pacijenata</li>
-            <li>brzi odgovor na upit</li>
-        </ul>
+  <div class="card bg-dark text-white pocetna-container">
+      <img class="card-img" src="{% static 'zdravstveni_sustav_app/images/doc_poc.png' %}" alt="Card image">
+      <div class="card-img-overlay justify-content-left">
+        <h5 class="card-title">-- Vaše zdravlje nam je bitno! --</h5>
+        <div class="pt-4 pl-5">
+          <h4 class="card-title">Mi vam nudimo:</h4>
+          <ul class="card-text">
+              <li>vrhunsku skrb na više od 5 lokacija</li>
+              <li>profesionalno i odgovorno medicinsko osoblje</li>
+              <li>mogućnost narudžbe pacijenata</li>
+              <li>brzi odgovor na upit</li>
+          </ul>
+        </div>
+        <a href="{% url 'narudzba' %}" class="btn btn-primary naruci-se-gumb">Naruči se</a>
       </div>
-      <a href="{% url 'narudzba' %}" class="btn btn-primary naruci-se-gumb">Naruči se</a>
-    </div>
-</div>
+  </div>
 
 
-<div class="card-deck-container">
-<div class="container-fluid p-0 m-0">
-  <div class="row">
-    <div class="card col-sm-12 col-md-12 col-lg-4 card-white">
-      <div class="card-body">
-        <h5 class="card-title">Najbolji doktori u PGŽ!<img src="{% static 'zdravstveni_sustav_app/images/doctor.png' %}" class="card-doctor pl-3 pb-2"></h5>
-        <span><p class="card-text">Medigital se godinama bavi zdravljem pacijenata. Od naručivanja pregleda do mogućnosti unosa i opisa simptoma, pacijenti se za čas mogu naručiti za pregled</p></span>
+  <div class="card-deck-container">
+  <div class="container-fluid p-0 m-0">
+    <div class="row">
+      <div class="card col-sm-12 col-md-12 col-lg-4 card-white">
+        <div class="card-body">
+          <h5 class="card-title">Najbolji doktori u PGŽ!<img src="{% static 'zdravstveni_sustav_app/images/doctor.png' %}" class="card-doctor pl-3 pb-2"></h5>
+          <span><p class="card-text">Medigital se godinama bavi zdravljem pacijenata. Od naručivanja pregleda do mogućnosti unosa i opisa simptoma, pacijenti se za čas mogu naručiti za pregled</p></span>
+        </div>
       </div>
-    </div>
-    <div class="card col-sm-12 col-md-12 col-lg-4 card-white">
-      <div class="card-body">
-        <h5 class="card-title">Više od 5 lokacija!</h5>
-        <p class="card-text">Medigital svoje usluge nudi na više od 5 lokacija. Pacijenti se mogu naručiti na pregled u više od 5 domova zdravlja u Primorsko-goranskoj županiji</p>
+      <div class="card col-sm-12 col-md-12 col-lg-4 card-white">
+        <div class="card-body">
+          <h5 class="card-title">Više od 5 lokacija!</h5>
+          <p class="card-text">Medigital svoje usluge nudi na više od 5 lokacija. Pacijenti se mogu naručiti na pregled u više od 5 domova zdravlja u Primorsko-goranskoj županiji</p>
+        </div>
       </div>
-    </div>
-    <div class="card col-sm-12 col-md-12 col-lg-4 card-white">
-      <div class="card-body">
-        <p class="card-text">Medigital je zdravstveno-digitalna agencija usmjerena na pružanje
-          najboljeg digitalnog zdravstvenog sustava u Hrvatskoj.</p>
-        <a href="{% url 'about' %}">
-          <i class="fa-solid fa-notes-medical fa-flip fa-2xl d-flex justify-content-center pt-5" style="color: #c61414;"></i>
-        </a>
+      <div class="card col-sm-12 col-md-12 col-lg-4 card-white">
+        <div class="card-body">
+          <p class="card-text">Medigital je zdravstveno-digitalna agencija usmjerena na pružanje
+            najboljeg digitalnog zdravstvenog sustava u Hrvatskoj.</p>
+          <a href="{% url 'about' %}">
+            <i class="fa-solid fa-notes-medical fa-flip fa-2xl d-flex justify-content-center pt-5" style="color: #c61414;"></i>
+          </a>
+        </div>
       </div>
     </div>
   </div>
-</div>
-</div>  
+  </div>  
 
 
-<div class="container-fluid p-0 mb-5">
-  <div class="row mt-5 -5">
-    <div class="col-md-12 col-lg-6 card">
-      <div class="card-body">
-        <h5 class="card-title">Dobrodošli u Medigital, gdje je zdravlje najbitnije!</h5>
-        <p class="card-text">Ovisno o vašim potrebama i željama, mi vam nudimo usluge. Od naručivanja za pregled u terminu koji god vi želite, 
-          pa sve do unošenja vaših simptoma, Medigital nudi odličnu interakciju sa korisnik-pacijentom!</p>
-        <a href="{% url 'about' %}" class="btn btn-primary naruci-se-gumb-about mt-5">O nama</a>
+  <div class="container-fluid p-0 mb-5">
+    <div class="row mt-5 -5">
+      <div class="col-md-12 col-lg-6 card">
+        <div class="card-body">
+          <h5 class="card-title">Dobrodošli u Medigital, gdje je zdravlje najbitnije!</h5>
+          <p class="card-text">Ovisno o vašim potrebama i željama, mi vam nudimo usluge. Od naručivanja za pregled u terminu koji god vi želite, 
+            pa sve do unošenja vaših simptoma, Medigital nudi odličnu interakciju sa korisnik-pacijentom!</p>
+          <a href="{% url 'about' %}" class="btn btn-primary naruci-se-gumb-about mt-5">O nama</a>
+        </div>
+      </div>
+      <div class="col-md-12 col-lg-6">
+        <img src="{% static 'zdravstveni_sustav_app/images/doc_pocetna.jpg' %}" class="card-img rounded">
       </div>
     </div>
-    <div class="col-md-12 col-lg-6">
-      <img src="{% static 'zdravstveni_sustav_app/images/doc_pocetna.jpg' %}" class="card-img rounded">
-    </div>
   </div>
-</div>
-
-<!--
-<div class="card text-white">
-    <img src="{% static 'zdravstveni_sustav_app/images/doc_poc.png' %}" class="card-img img-fluid " alt="Carousel">
-    <div class="card-img-overlay ml-4">-->
-        <!--<i class="fa-solid fa-notes-medical fa-beat" style="color: #ec0909;"></i>
-        <h2 class="card-title pt-3 pl-5">--Vaše zdravlje nam je bitno!--</h2>
-        <div class="ml-5">
-            <p class="card-text pt-5 ml-4">Mi vam nudimo:</p>
-            <ul class="list-group list-group-flush card-text">
-                <li class="list-group-item ml-5 pl-4">vrhunsku skrb na više od 5 lokacija</li>
-                <li class="list-group-item ml-5 pl-4">profesionalno i odgovorno medicinsko </li>
-                <li class="list-group-item ml-5 pl-4">mogućnost narudžbe pacijenata</li>
-                <li class="list-group-item ml-5 pl-4">brzi odgovor na upit</li>
-            </ul>
-        </div> 
-        <a href="{% url 'narudzba' %}">
-            <button type="button" class="btn">Naruči se</button>
-        </a>
-</div>
--->
+</body>
 {% endblock content %}

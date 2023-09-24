@@ -14,6 +14,12 @@ import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+# __file__ je ugrađena varijabla u Pythonu koja sadrži putanju do trenutne datoteke
+# Path je objekt iz modula pathlib, pozivanjem Path(__file__), __file__ se pretvara u objekt tipa Path()
+# što omogućuje napredne operacije na putanji
+# resolve čini putanju apsolutnom
+# parent.parent naz vodi dvije razine iznad trenutne datoteke
+# __file__ je dostupan samo unutar datoteke, a ne unutar interaktivnog python sučelja
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 

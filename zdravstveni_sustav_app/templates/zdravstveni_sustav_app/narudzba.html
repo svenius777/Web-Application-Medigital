@@ -11,6 +11,11 @@
       const appointmentForm = document.getElementById('appointmentForm');
       
       // Get the current date in the format "YYYY-MM-DD"
+      // new Date() stvara novi objekt tipa Date
+      // toISOString pretvara datum u string u formatu YYYY-MM-DD
+      // split() funkcija razdvaja taj datum od vremena na osnovi znaka T
+      // tako da imamo onda dvije komponente: prva sa datumom, druga sa vremenom
+      // pristupamo prvoj komponenti sa [0]
       const currentDate = new Date().toISOString().split('T')[0];
   
       // Set the min attribute of the date input to the current date

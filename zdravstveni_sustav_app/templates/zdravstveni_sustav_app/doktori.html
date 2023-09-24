@@ -26,12 +26,12 @@
                 zato jer inače ispisuje admina
                 {% endcomment %}
                 {% if forloop.counter >= 2 %}
-                    <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="card mb-5">
                             <div class="image-container">
                                 <img src="{{ doktor.profil.image.url }}" class="card-img-top doktor-img" alt="{{ doktor.first_name }}">
                             </div>
-                            <div class="card-body">
+                            <div class="card-body card-body-doktor">
                                 <h5 class="card-title">{{ doktor.first_name }} {{ doktor.last_name }} - {{ doktor.specijalizacija_doktora }}</h5>
                                 <p class="card-text">{{ doktor.opis_doktora}} {{ doktor.iskustvo_doktora }}</p>
                                 <p class="card-text">Trenutna lokacija doktora: {{ doktor.dom_zdravlja }}</p>

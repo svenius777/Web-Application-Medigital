@@ -7,8 +7,9 @@ body {
 }
 
 .slika-naruci {
-  height: 500px;
-  width: 100;
+  width: 100% !important;
+  height: 800px !important;
+  object-fit: cover !important;
 }
 
 .display-inline{

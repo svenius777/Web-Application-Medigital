@@ -9,7 +9,7 @@ class profil(models.Model):
     doktor = models.OneToOneField(Doktor, on_delete=models.CASCADE)
     #upload_to je direktorij gdje se slike uploadaju
     #default.jpg je default image za svakog korisnika
-    image = models.ImageField(default='default.jpg', upload_to='profilne_slike')
+    image = models.ImageField(default='default.png', upload_to='profilne_slike')
 
     #dunder objekt
     def __str__(self):

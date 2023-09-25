@@ -38,9 +38,9 @@
 <!--Main Content Start-->
   
 
-    <div class="container-fluid d-flex justify-content-center mt-5 mb-5">
+    <div class="container-fluid mt-5 mb-5">
       <div class="row">
-        <div class="col-md-6 form-padding col-sm-12">
+        <div class="col-md-6 col-sm-12">
           {% for msg in messages %}
             
               <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -84,7 +84,7 @@
               </select>
             
               <label class="mt-3" for="simptomi">Simptomi:</label>
-              <textarea class="mb-4" placeholder="Kašalj, glava me boli..." name="simptomi" style="width: 100%; height:110px;"></textarea>
+              <textarea class="mb-4 form-simptomi " placeholder="Kašalj, glava me boli..." name="simptomi"></textarea>
               
 
               <input value="Naruči se" type="submit" class="btn btn-primary naruci-se-gumb-form">
@@ -92,8 +92,8 @@
           </form>
         </div>
           
-        <div class="col-md-6 rounded mt-3 col-sm-12">
-            <img src="{% static 'zdravstveni_sustav_app/images/nar.jpg' %}" alt="" style="height: 500px; width:auto;" class="rounded">
+        <div class="col-md-6 rounded mt-3 col-sm-12 ">
+            <img src="{% static 'zdravstveni_sustav_app/images/nar.jpg' %}" alt="" class="rounded slika-naruci">
         </div>
 
       </div>

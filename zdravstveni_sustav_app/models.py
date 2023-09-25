@@ -6,7 +6,22 @@ from django.utils import timezone
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 
 class CustomUserManager(BaseUserManager):
+    """
+    Ova klasa stvara običnog korisnika ili superkorisnika
+    """
+
     def create_user(self, username, password=None, **extra_fields):
+        """
+        Stvara običnog korisnika na temelju lozinke i korisničkog imena, sprema u bazu
+        i vraća ga.
+
+        Argumenti:
+        username -- korisničko ime
+        password -- lozinka korisnika
+
+        Vraća:
+        User objekt 
+        """
         if not username:
             raise ValueError('Unesite username')
         #email = self.normalize_email(email)
@@ -37,6 +52,12 @@ class DomZdravlja(models.Model):
     
 
 class Doktor(AbstractBaseUser, PermissionsMixin):
+    """
+    Klasa koja definira model doktora.
+    
+    Nasljeđuje AbstractBaseUser klasu koja omogućava prilagodbu korisničkog modela
+    i PermissionsMixin klasu koja upravlja dozvolama korisnika
+    """
     username = models.CharField(max_length=30, unique=True)
     email = models.EmailField(blank=True)
     first_name = models.CharField(max_length=30, blank=True)
@@ -44,7 +65,7 @@ class Doktor(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     date_joined = models.DateTimeField(default=timezone.now)
-    #ako se obriše dom_zdravlja, npr ruši se zgrada, postavi doktoru dom_zdravlja na null (nema smisla brisat doktora)
+    # Ako se obriše dom_zdravlja, npr ruši se zgrada, postavi doktoru dom_zdravlja na null (nema smisla brisat doktora)
     dom_zdravlja = models.ForeignKey(DomZdravlja, default=1, on_delete=models.SET_NULL, null=True)
 
     # Add custom fields here
@@ -63,8 +84,10 @@ class Doktor(AbstractBaseUser, PermissionsMixin):
         ("Onkolog", "Onkolog")
     ]
     #vazno da je default inace dobijem error da id ne postoji
-    specijalizacija_doktora = models.CharField(max_length=30, choices=specijalizacija_doktora_izbori, default="AN")
+    specijalizacija_doktora = models.CharField(max_length=30, choices=specijalizacija_doktora_izbori, default="Anesteziolog")
 
+    # Postavlja upravitelja (managera) za ovaj model. CustomUserManager
+    # je upravitelj koji sadrzi metode za stvaranje i upravljanje korisnicima
     objects = CustomUserManager()
 
     USERNAME_FIELD = 'username'

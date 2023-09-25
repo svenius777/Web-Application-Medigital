@@ -95,6 +95,16 @@ def login_view(request):
 #     return render(request, 'zdravstveni_sustav_app/narudzba.html')
 
 class NarudzbaView(View):
+    """
+    NarudzbaView je klasni pogled koji nasljeđuje View.
+
+    Klasni pogledi omogućavaju veću strukturu i organizaciju koda nego
+    funkcionalni pogledi. Pogledi su odgovorni za obradu HTTP zahtjeva koje 
+    naša web stranica prima od klijenta (preglednika). Klasa 'View' omogućava
+    različite akcije na temelju različitih HTTP zahtjeva. Tako
+    možemo definirati GET, PUT, DELETE i POST metode te odrediti što će naš pogled
+    raditi ovisno o metodi koja mu je prosljeđena sa HTTP zahtjevom.
+    """
     def get(self, request, *args, **kwargs):
         context = {
             'doktori': Doktor.objects.all()
